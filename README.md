@@ -22,7 +22,11 @@ The first thing to explore is a breakdown of the top 5 holdings of each ETF, a t
 - Looking at the holdings breakdown, QQQ has a much higher exposure with their largest holdings compared to IVV.  Those top 5 holdings represent 40.55% of the total assets of QQQ and 20.97% of IVV total assets, respectively.  Additionally, those top 5 companies would all be considered technology companies (even if some are technically part of the consumer discretionary or communications sectors).  *For this analysis, I combined Alphabet Class A (GOOGL) & Class C (GOOG) because the price variation is somewhat negligible, and the voting rights associated with GOOGL (GOOG shares are not attached to any voting rights) don't really factor into this analysis.
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/top_5_holdings.png) 
+
+
 When I first called the data from Yahoo Finance for both ETFs using the Pandas Data Reader, it looked like this.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/IVV_DF_starting.png) 
 
@@ -40,15 +44,22 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - In order to visualize the closes over time, I created a line plot that tracked each ETFs closing values from the selected starting point (1/2/2015) to the current date.
 
+
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/QQQ_IVV_Closes.png)
 
 
 - Next, I wanted to look at the simple moving averages (SMA) for both ETFs.  Simple moving averages take a certain time (for this use case, 10 days) and get the mean for that range of dates.  Additionally, I wanted to also add in the exponential moving averages (EMA), which are similar to SMAs but weight the more recent dates heavier so that they are more sensitive to future price changes.  
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/SMA_EMA_code.png)
 
 
 - Using those values, I created a line plot that would chart the SMA and EMA for each security with the share price of each one overlayed.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/QQQ_IVV_MA_EMA.png)
 
@@ -57,10 +68,14 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - Next, I wanted to compare the value change for the securities over a one year span.  In order to do so, I created two new DataFrames that had the closing price for each particular day along with the closing price for one year after that initial date.  Then to allow for a quicker comparison, a column that had the difference (in USD) between the two was added.
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/IVV_DF_year_change.png)
 
 
 - In order to visualize this change, I created a line graph for each security.  The first line (QQQ_1 or IVV_1) is the price on the day the chart starts (1/02/2018) and the second line (QQQ_2 or IVV_2) is the price on that same day, one year later.  This allows for the viewer to quickly look at how the security performed over 1 year intervals.  Here again, QQQ outshines IVV as it is shown to be more resilient to corrections and experiences growth after a dip faster than IVV.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/IVV_1yr_change.png)
 
@@ -69,20 +84,28 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - To better understand which ETF performed better over those 1 year time periods, a new DataFrame was created using the following code.
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/DF_1year_code.png)
 
 
 - The above code allowed for new columns showing the percentage growth for each security and also identifies which performed better in each one-year period.  The new table can be seen below.
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/DF_1yr_comparsion.png)
 
 
-- In order to zoom in and quickly asertain which ETF had better 1 year performance overall, the previous table was distilled into a simpler one with that simply counted up the number of times each ETF performed better over the 1 year intervals (there is a row for equal performance, but this never actually occurred)
+- In order to zoom in and quickly asertain which ETF had better 1 year performance overall, the previous table was distilled into a simpler one with that simply counted up the number of times each ETF performed better over the 1 year intervals (there is a row for equal performance, but this never actually occurred).
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/DF_1yr_performance_count.png)
 
 
 - To visualize the comparison, the followign bar chart was created below.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/Bar_Chart_1yr_comp.png)
 
@@ -93,10 +116,14 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - Next, I wanted to expand the range to 5 year periods, to see if the QQQs performance held up over a longer timeframe.  A new DataFrame was created using the same method as before, but the code was slightly changed so that the new date column was 5 years after the starting point, instead of just 1 year.  Below is an image of the table.
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/DF_5year_table.png)
 
 
-- Next, I added the same new columns to the DataFrame that I had for the 1 year version that show which ETF performed better over a given 5 year period.  Below is a sample of 10 random dates chosen using  the following: '''sample(n=10)'''
+- Next, I added the same new columns to the DataFrame that I had for the 1 year version that show which ETF performed better over a given 5 year period.  Below is a sample of 10 random dates chosen using  the following: ```sample(n=10)```
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_DataFrames/DF_5yr_performance_count_comp.png)
 
@@ -117,15 +144,21 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - The first table that was created was just a direct import of the Pandas DataFrame with conditional formatting to highlight the higher performing value with a green cell, and the lower performing one with a red cell fill.  Below is a partial view of the table (the table contains too many columns to capture it fully).
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_excel_tables/ETF_excel_direct_export.png)
 
 
 - Next, I wanted to examine the securities rate of normalized change side by side more closely.  A new table was created to showcase the comparative normalized changes of the two ETFs.  
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_excel_tables/ETF_excel_normalized_change.png)
 
 
 - Normalized change is a great way to understand how a specific security is performing because the rate is normalized from the initial amount, so it’s comparable across time. What is exceedingly clear is that QQQ performs at a much higher level across every single benchmark. As it can be seen below in the line chart, the 5-year QQQ normalized change is greater than the current (6.5 years) normalized change of IVV.  Furthermore, when comparing the current normalized rate of both ETFs, QQQ has experienced 140% more growth than IVV.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/ETF_line_normalized_change.png)
 
@@ -138,10 +171,14 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 - In order to see how those fees played out, the table below was constructed to examine how the different fee rates effected the returns of both ETFs.
 
+
+
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_excel_tables/ETF_after_fees_table.png)
 
 
 - Again, using conditional formatting, the higher value cell is green and the lower red, and the pattern that has been consistent since the start of the analysis holds, QQQ outperforms IVV- even with its comparatively higher expense ratio.  The line graph aptly visualizes the after fees ROI over time for each fund, and it couldn’t be clearer that QQQ is the better performing fund.
+
+
 
 ![ALT_TEXT](https://github.com/Nickguild1993/Py_IVV_QQQ/blob/main/ETF_images/Growth_after_fees_ETF.png)
 
