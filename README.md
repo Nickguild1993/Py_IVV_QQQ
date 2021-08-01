@@ -8,7 +8,7 @@
 
 ## Terminology:
 
-- Exchange Traded Funds (referred to as ETFs from this point on) are an investment vehicle that can be comprised of stocks, bonds, commodities, real estate as well as other types of financial assets.  ETFs are similar to mutual funds, in that both contain a basket of assets, but they operate differently in a few key areas.  However, because ETFs behave like stocks (in that they are tradable at any point while the market is open) they offer much more flexibility than a traditional mutual fund, which is only traded once, at the end of trading day.  Because ETFs are traded throughout the day, their value is constantly updated, which allows the investor to be more reactive instead of having to wait on a mutual funds NAV (net asset value- the funds total assets minus liabilities divided by the number of issued shares) to be calculated at the end of the day.  Because of this, and other benefits such as being more tax friendly than mutual funds, ETFs have become increasingly popular among both institutional and retail investors.
+- Exchange Traded Funds (referred to as ETFs from this point on) are an investment vehicle that can be comprised of stocks, bonds, commodities, real estate as well as other types of financial assets.  ETFs are similar to mutual funds, in that both contain a basket of assets, but they operate differently in a few key areas.  One important difference is that ETFehave like stocks (in that they are tradable at any point while the market is open) they offer much more flexibility than a traditional mutual fund, which is only traded once, at the end of trading day.  Because ETFs are traded throughout the day, their value is constantly updated, which allows the investor to be more reactive instead of having to wait on a mutual funds NAV (net asset value- the funds total assets minus liabilities divided by the number of issued shares) to be calculated at the end of the day.  Because of this, and other benefits such as being more tax friendly than mutual funds, ETFs have become increasingly popular among both institutional and retail investors.
 
 - While there are actively managed ETFs, this project focuses on two of the top passively managed ETFs- iShares’ IVV and Invesco’s QQQ.  IVV tracks the S&P 500 index while QQQ tracks the NASDAQ-100 index.  
 
@@ -202,7 +202,3 @@ When I first called the data from Yahoo Finance for both ETFs using the Pandas D
 
 
 
-
-
-
-![image](https://user-images.githubusercontent.com/68669828/125839719-4807f7d7-e263-4c7a-9610-cfb75b45648a.png)
